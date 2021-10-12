@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 设置表的样式 */
+        .clock{
+            width: 500px;
+            height: 500px;
+            /* background-color: #bfa; */
+            margin: 0 auto;
+            margin-top: 100px;
+            border-radius: 50%;
+            border: 10px solid black;
+            position: relative;
+        }
+
+        .clock > div{
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        /* 设置时针样式 */
+        .hour-wrapper{
+            height: 60%;
+            width: 60%;
+/*             background-color: #bfa; */
+            position: absolute;
+            animation: run 43200s infinite linear;
+        }
+
+        .hour{
+            height: 50%;
+            width: 6px;
+            background-color: black;
+            margin: 0 auto;
+            
+        }
+
+        /* 创建分针样式 */
+        .minute-wrapper{
+            height: 80%;
+            width: 80%;
+/*             background-color: #bfa; */
+            position: absolute;
+            animation: run 3600s infinite linear;
+        }
+
+        .minute{
+            height: 50%;
+            width: 4px;
+            background-color: yellow;
+            margin: 0 auto;
+            
+        }
+
+        /* 创建秒针样式 */
+        .second-wrapper{
+            height: 95%;
+            width: 95%;
+/*             background-color: #bfa; */
+            position: absolute;
+            animation: run 60s infinite linear;
+        }
+
+        .second{
+            height: 50%;
+            width: 2px;
+            background-color: greenyellow;
+            margin: 0 auto;
+        }
+
+        @keyframes run{
+            from{
+                transform: rotateZ(0);
+            }
+
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 创建表的容器 -->
+    <div class="clock">
+        <!-- 创建时针容器 -->
+        <div class="hour-wrapper">
+            <div class="hour"></div>
+        </div>
+
+        <!-- 创建分针容器 -->
+        <div class="minute-wrapper">
+            <div class="minute"></div>
+        </div>
+
+        <!-- 创建秒针容器 -->
+        <div class="second-wrapper">
+            <div class="second"></div>
+        </div>
+    </div>
+</body>
+</html>
